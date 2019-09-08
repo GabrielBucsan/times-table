@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Times Table</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script src="utils/mathUtils.js"></script>
+    <script src="main.js"></script>
+    <script src="canvas.js"></script>
+    <script src="objects/point.js"></script>
+</head>
+<body>
+    <div class="column">
+        <canvas></canvas>
+        <span>Number of Points</span>
+        <form oninput="pointsRangeOut.value = pointsRange.valueAsNumber" class='row'>
+            <input type="range" name="pointsRange" id="pointsRange" min="10" max="500" value="100" class='fill-width'>
+            <output name="pointsRangeOut" for="pointsRange">100</output>
+        </form>
+        <span>Multiplicator</span>
+        <form oninput="multiplicatorRangeOut.value = multiplicatorRange.valueAsNumber" class='row'>
+            <input type="range" name="multiplicatorRange" id="multiplicatorRange" min="2" max="50" value="2" class='fill-width'>
+            <output name="multiplicatorRangeOut" for="multiplicatorRange">2</output>
+        </form>
+        <span>Points Color</span>
+        <input type="color" name="pointsColor" id="pointsColor" value="#ffffff">
+        <span>Lines Color</span>
+        <input type="color" name="linesColor" id="linesColor" value="#949494">
+    </div>
+</body>
+</html>
