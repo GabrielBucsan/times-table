@@ -34,7 +34,7 @@ $(document).ready(()=>{
         calculatePoints();
     });
 
-
+    // calculates the points along the circle, positioning and making all the connections with each other
     var calculatePoints = function(){
         let numPoints = Number(pointsSlider[0].value);
         let multiplicator = Number(multiplicatorSlider[0].value);
@@ -42,6 +42,7 @@ $(document).ready(()=>{
         let linesColor = linesColorPicker[0].value;
         points = [];
 
+        // creating the points
         for (let i = 0; i < numPoints; i++) {
             let step = i * Math.PI * 2 / numPoints;
             step = new Vector(Math.cos(step), Math.sin(step));
@@ -52,6 +53,7 @@ $(document).ready(()=>{
             points.push(new Point(c, new Vector(canvas.size.x / 2 + localDir.x, canvas.size.y / 2 + localDir.y), pointsColor, linesColor));
         }
     
+        // making connections
         for (let i = 0; i < points.length; i++) {
             let double = i * multiplicator;
             if(double >= numPoints) double = double % numPoints;
