@@ -11,16 +11,6 @@ $(document).ready(()=>{
     let points = [];
     let direction = new Vector();
 
-    // MAIN FUNCTION
-    (function animate(){
-        requestAnimationFrame(animate);
-        canvas.update();
-
-        for (let i = 0; i < points.length; i++) {
-            points[i].render();
-        }
-    })();
-
     $('#pointsRange').on('input', function () {
         calculatePoints();
     });
@@ -35,7 +25,7 @@ $(document).ready(()=>{
     });
 
     // calculates the points along the circle, positioning and making all the connections with each other
-    var calculatePoints = function(){
+    let calculatePoints = function(){
         let numPoints = Number(pointsSlider[0].value);
         let multiplicator = Number(multiplicatorSlider[0].value);
         let pointsColor = pointsColorPicker[0].value;
@@ -59,7 +49,18 @@ $(document).ready(()=>{
             if(double >= numPoints) double = double % numPoints;
             points[i].connectTo(points[double]);
         }
+
+        requestAnimationFrame(animate);
     }
+
+    // MAIN FUNCTION
+    let animate = function(){
+        canvas.update();
+
+        for (let i = 0; i < points.length; i++) {
+            points[i].render();
+        }
+    };
 
     calculatePoints();
 });
