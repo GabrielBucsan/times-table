@@ -4,6 +4,7 @@ $(document).ready(()=>{
     const c = canvas.context;
     const pointsSlider = $('#pointsRange');
     const multiplicatorSlider = $('#multiplicatorRange');
+    const lineWidthSlider = $('#lineWidthRange');
     const pointsColorPicker = $('#pointsColor');
     const linesColorPicker = $('#linesColor');
 
@@ -17,6 +18,9 @@ $(document).ready(()=>{
     $('#multiplicatorRange').on('input', function () {
         calculatePoints();
     });
+    $('#lineWidthRange').on('input', function () {
+        calculatePoints();
+    });
     $('#pointsColor').on('input', function () {
         calculatePoints();
     });
@@ -28,6 +32,7 @@ $(document).ready(()=>{
     let calculatePoints = function(){
         let numPoints = Number(pointsSlider[0].value);
         let multiplicator = Number(multiplicatorSlider[0].value);
+        let lineWidth = Number(lineWidthSlider[0].value);
         let pointsColor = pointsColorPicker[0].value;
         let linesColor = linesColorPicker[0].value;
         points = [];
@@ -40,7 +45,7 @@ $(document).ready(()=>{
             localDir.add(step);
             localDir.divideVector(2);
             localDir.multiplyVector(radius * 2);
-            points.push(new Point(c, new Vector(canvas.size.x / 2 + localDir.x, canvas.size.y / 2 + localDir.y), pointsColor, linesColor));
+            points.push(new Point(c, new Vector(canvas.size.x / 2 + localDir.x, canvas.size.y / 2 + localDir.y), pointsColor, linesColor, lineWidth));
         }
     
         // making connections

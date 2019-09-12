@@ -13,22 +13,29 @@
     <script src="objects/point.js"></script>
 </head>
 <body>
-    <div class="column">
+    <div class="row">
         <canvas></canvas>
-        <span>Number of Points</span>
-        <form oninput="pointsRangeOut.value = pointsRange.valueAsNumber" class='row'>
-            <input type="range" name="pointsRange" id="pointsRange" min="10" max="1000" value="100" class='fill-width'>
-            <output name="pointsRangeOut" for="pointsRange">100</output>
-        </form>
-        <span>Multiplicator</span>
-        <form oninput="multiplicatorRangeOut.value = multiplicatorRange.valueAsNumber" class='row'>
-            <input type="range" name="multiplicatorRange" id="multiplicatorRange" min="2" max="200" value="2" class='fill-width'>
-            <output name="multiplicatorRangeOut" for="multiplicatorRange">2</output>
-        </form>
-        <span>Point Color</span>
-        <input type="color" name="pointsColor" id="pointsColor" value="#ffffff">
-        <span>Line Color</span>
-        <input type="color" name="linesColor" id="linesColor" value="#949494">
+        <div class="column width-300px padding-10px">
+            <span>Number of Points</span>
+            <form oninput="pointsRangeOut.value = pointsRange.valueAsNumber" class='row'>
+                <input type="range" name="pointsRange" id="pointsRange" min="10" max="2000" value="500" class='fill-width'>
+                <output name="pointsRangeOut" for="pointsRange">500</output>
+            </form>
+            <span>Multiplicator</span>
+            <form oninput="multiplicatorRangeOut.value = multiplicatorRange.valueAsNumber" class='row'>
+                <input type="range" name="multiplicatorRange" id="multiplicatorRange" min="2" max="500" value="2" class='fill-width'>
+                <output name="multiplicatorRangeOut" for="multiplicatorRange">2</output>
+            </form>
+            <span>Line Width</span>
+            <form oninput="lineWidthRangeOut.value = lineWidthRange.valueAsNumber" class='row'>
+                <input type="range" name="lineWidthRange" id="lineWidthRange" min="0.1" max="1" value="0.2" class='fill-width' step='0.1'>
+                <output name="lineWidthRangeOut" for="lineWidthRange">0.2</output>
+            </form>
+            <span>Point Color</span>
+            <input type="color" name="pointsColor" id="pointsColor" value="#00ffff">
+            <span>Line Color</span>
+            <input type="color" name="linesColor" id="linesColor" value="#ff4242">
+        </div>
     </div>
 </body>
 </html>

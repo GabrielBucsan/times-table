@@ -24,3 +24,12 @@ body{
 .fill-width{
     width: 100%;
 }
+
+
+.width-300px{
+    width: 300px;
+}
+
+.padding-10px{
+    padding: 10px;
+}

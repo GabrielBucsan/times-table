@@ -1,11 +1,12 @@
 class Point{
-    constructor(c, pos, pointColor, lineColor){
+    constructor(c, pos, pointColor, lineColor, lineWidth){
         this.pos = pos;
         this.c = c;
         this.pointColor = pointColor || '#ffffff';
-        this.lineColor = lineColor || '#949494'
+        this.lineColor = lineColor || '#949494';
+        this.lineWidth = lineWidth;
 
-        this.radius = 2;
+        this.radius = 1;
         this.connected = [];
     }
 
@@ -34,6 +35,7 @@ class Point{
             this.c.closePath();
         }
         this.c.strokeStyle = this.lineColor;
+        this.c.lineWidth = this.lineWidth;
         this.c.stroke();
 
     }
